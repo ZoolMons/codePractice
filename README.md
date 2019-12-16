@@ -1,2 +1,6 @@
-# Hello World!
-u can pull and run.By the way,thanks for telling me how can i improve
+<<<<<<< HEAD
+# codePractice
+Record of my JAVA code exercises
+=======
+# first
+>>>>>>> 第一次提交
