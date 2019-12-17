@@ -6,8 +6,6 @@ package SortPractice;
  *
  */
 
-import java.util.Arrays;
-
 /**
  * 思路：每次内循环把最大的数冒泡到最右边
  *  其中的flag用来优化，当一轮下来如果没有发生交换则代表已经排好序直接退出循环

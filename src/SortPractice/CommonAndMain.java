@@ -1,6 +1,7 @@
 package SortPractice;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Random;
 
 /**
  * @auther: wilson
@@ -23,24 +24,6 @@ public class CommonAndMain {
         return ramdom;
     }
 
-
-    private static List sortMapLIst(List list){
-        Collections.sort(list);
-        return list;
-    }
-
-    /**
-     * 尝试对象锁
-     */
-    private void test(){
-        CommonAndMain commonAndMain = new CommonAndMain();
-        synchronized (this){
-            synchronized (commonAndMain){
-            System.out.println("fuck you");
-            }
-        }
-    }
-
     public static void main(String[] args) {
         Integer[] dataSources = CommonAndMain.RamdomArray();
         System.out.println("获取长度为10的随机数组：");
@@ -49,7 +32,8 @@ public class CommonAndMain {
         });
         System.out.println();
         System.out.println("经过排序后的有序数组：");
-        dataSources = QuickSort.sort(dataSources);
+//        dataSources = BubbleSort.bubbleSort(dataSources);
+        dataSources = SelectionSort.selectionSort(dataSources);
         Arrays.stream(dataSources).forEach(a->{
             System.out.print(a + "  ");
         });
