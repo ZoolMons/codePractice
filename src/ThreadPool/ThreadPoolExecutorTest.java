@@ -12,6 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ThreadPoolExecutorTest {
     public static void main(String[] args) throws InterruptedException, IOException, ExecutionException {
         Object block  = new Object();
+
         int corePoolSize = 2;
         int maximumPoolSize = 4;
         long keepAliveTime = 10;
@@ -25,7 +26,8 @@ public class ThreadPoolExecutorTest {
         RejectedExecutionHandler handler = new MyIgnorePolicy();
         ThreadPoolExecutor executor = new ThreadPoolExecutor(corePoolSize, maximumPoolSize, keepAliveTime, unit,
                 workQueue, threadFactory, handler);
-        executor.prestartAllCoreThreads(); // 预启动所有核心线程
+        // 预启动所有核心线程
+        executor.prestartAllCoreThreads();
         for (int i = 1; i <= 10; i++) {
             MyTask task = new MyTask(String.valueOf(i));
             executor.execute(task);
